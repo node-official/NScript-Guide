@@ -1,0 +1,61 @@
+
+/- This is a file, written for NScript programming language. And yeah, this is a comment. -/
+/- By the way, NScript is a powerful programming language created by Node. Meow ^-^ -/
+
+/- @param string{} name  Name to meet. -/
+/- ^^^^ I'll write more about comment documentation engine later. -/
+func SayHi << (string{} name) -> {
+    $.cout << "Hello, " << name << $.endl;
+}
+
+func Main << () -> {
+    $.cout << "Hello, World!" << $.endl;
+    
+    string{} name; /- Maximum allowed size per string - 512 Megabytes. -/
+    /- Or string{50} name; ({50} is a size in symbols for the variable) -/
+    /- Or string{#122} name; ({#122}) is a size in bytes for the variable) -/
+    
+    /- Other types of variables: -/
+    int{} catAge;
+    bool{} debugEnabled;
+    float{} lootChance;
+    array{} inventoryYep;
+    
+    /- Variables with default values: -/
+    int{} howManyCatsInTheRoom << 2;
+    bool{} youAreStupidOtter << False; /- 0/1 are correct too -/
+    float{} math_pi; /- You can use `$.Math` ($.Math.PI) module instead. LOL :D -/
+    
+    $.cin{<< ("What is your name?")} >> name;
+    
+    $.SayHi{<< (name)};
+}
+
+/- Clat means class and cat. ;3 -/
+clat Player {
+    /- The clat defined variables -/
+    int{} playerLevel;
+    bool{} consoleEnabled << True;
+    
+    /- First argument is required, second argument is optional. -/
+    func __$ << (int{} plLevel, bool{} _consoleEnabled << False) -> {
+        /- __$ - constructor -/
+        $.playerLevel << plLevel;
+        $.consoleEnabled << _consoleEnabled; /- Some bug here, but this is a secret. Tshhh. ;3 -/
+    }
+    
+    /- I'm bored writing that, wait for the next file updates -/
+    /- WAIT. Some about the language: -/
+    
+    /--
+    
+    This is multiline comment. Yeep.
+    
+    Language platform: Every. (But I tested it on the Windows, if you want and have different os, you can help me with tests and updates)
+    Language type: with compiler.
+    First public release: Probably this June.
+    
+    AND... Sorry for possible typos - English is not my primary language...
+    
+    --/
+}
